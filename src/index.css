@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Inter:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Nanum Myeongjo", serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-library-brown: #3E2723;
+  --color-library-beige: #F5F5DC;
+  --color-library-gold: #D4AF37;
+  --color-paper: #FDF5E6;
+}
+
+@layer base {
+  body {
+    @apply font-serif bg-library-brown text-library-beige min-h-screen;
+    background-image: url('https://www.transparenttextures.com/patterns/dark-wood.png');
+  }
+}
+
+@layer utilities {
+  .paper-texture {
+    background-color: var(--color-paper);
+    background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+    box-shadow: inset 0 0 50px rgba(0,0,0,0.1), 0 10px 30px rgba(0,0,0,0.3);
+  }
+  
+  .shelf-shadow {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.4);
+  }
+
+  .book-shadow {
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.4);
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "name": "Book Archive",
+  "description": "A classic library-themed book collection manager with a virtual bookshelf UI.",
+  "requestFramePermissions": []
+}

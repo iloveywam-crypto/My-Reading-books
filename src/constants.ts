@@ -1,0 +1,58 @@
+import { Book } from './types';
+
+export const MOCK_BOOKS: Book[] = [
+  {
+    id: '1',
+    title: '데미안',
+    author: '헤르만 헤세',
+    coverImageUrl: 'https://picsum.photos/seed/demian/200/300',
+    rating: 5,
+    comment: '내면의 성장을 깊이 있게 다룬 고전.',
+    saveDate: '2024-03-15',
+  },
+  {
+    id: '2',
+    title: '1984',
+    author: '조지 오웰',
+    coverImageUrl: 'https://picsum.photos/seed/1984/200/300',
+    rating: 4,
+    comment: '빅브라더의 감시 사회, 소름 돋는 통찰력.',
+    saveDate: '2024-03-20',
+  },
+  {
+    id: '3',
+    title: '위대한 개츠비',
+    author: 'F. 스콧 피츠제럴드',
+    coverImageUrl: 'https://picsum.photos/seed/gatsby/200/300',
+    rating: 5,
+    comment: '화려함 뒤에 숨겨진 공허함과 비극.',
+    saveDate: '2024-03-25',
+  },
+  {
+    id: '4',
+    title: '어린 왕자',
+    author: '앙투안 드 생텍쥐페리',
+    coverImageUrl: 'https://picsum.photos/seed/littleprince/200/300',
+    rating: 5,
+    comment: '어른들을 위한 가장 아름다운 동화.',
+    saveDate: '2024-04-01',
+  },
+  {
+    id: '5',
+    title: '호밀밭의 파수꾼',
+    author: 'J.D. 샐린저',
+    coverImageUrl: 'https://picsum.photos/seed/catcher/200/300',
+    rating: 3,
+    comment: '방황하는 청춘의 목소리.',
+    saveDate: '2024-04-05',
+  },
+  {
+    id: '6',
+    title: '연금술사',
+    author: '파울로 코엘료',
+    coverImageUrl: 'https://picsum.photos/seed/alchemist/200/300',
+    rating: 4,
+    comment: '자신의 보물을 찾아 떠나는 여정.',
+    saveDate: '2024-04-10',
+  },
+];
