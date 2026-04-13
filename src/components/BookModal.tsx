@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X } from 'lucide-react';
+import { X, Trash2 } from 'lucide-react';
 import { Book } from '../types';
 import StarRating from './StarRating';
 
@@ -8,10 +8,18 @@ interface BookModalProps {
   book: Book | null;
   isOpen: boolean;
   onClose: () => void;
+  onDelete: (bookId: string) => void;
 }
 
-export default function BookModal({ book, isOpen, onClose }: BookModalProps) {
+export default function BookModal({ book, isOpen, onClose, onDelete }: BookModalProps) {
   if (!book) return null;
+
+  const handleDelete = () => {
+    if (window.confirm('정말 이 책을 삭제하시겠습니까?')) {
+      onDelete(book.id);
+      onClose();
+    }
+  };
 
   return (
     <AnimatePresence>
@@ -40,7 +48,7 @@ export default function BookModal({ book, isOpen, onClose }: BookModalProps) {
 
             <div className="flex flex-col md:flex-row gap-8">
               {/* Cover */}
-              <div className="flex-shrink-0 mx-auto md:mx-0">
+              <div className="flex-shrink-0 mx-auto md:mx-0 flex flex-col gap-4">
                 <div className="w-48 h-72 bg-gray-200 rounded-sm shadow-2xl overflow-hidden border-4 border-white">
                   <img
                     src={book.coverImageUrl}
@@ -49,6 +57,13 @@ export default function BookModal({ book, isOpen, onClose }: BookModalProps) {
                     referrerPolicy="no-referrer"
                   />
                 </div>
+                <button
+                  onClick={handleDelete}
+                  className="flex items-center justify-center gap-2 py-2 px-4 bg-red-800 text-white rounded-sm hover:bg-red-900 transition-colors text-sm font-bold"
+                >
+                  <Trash2 size={16} />
+                  책 삭제하기
+                </button>
               </div>
 
               {/* Details */}

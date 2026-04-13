@@ -6,4 +6,5 @@ export interface Book {
   rating: number;
   comment: string;
   saveDate: string;
+  userId: string;
 }

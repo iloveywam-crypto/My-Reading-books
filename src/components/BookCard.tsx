@@ -6,6 +6,7 @@ import StarRating from './StarRating';
 interface BookCardProps {
   book: Book;
   onClick: (book: Book) => void;
+  key?: string | number;
 }
 
 export default function BookCard({ book, onClick }: BookCardProps) {

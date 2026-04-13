@@ -1,0 +1,25 @@
+{
+  "entities": {
+    "Book": {
+      "title": "Book",
+      "description": "A book entry in the user's archive",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "description": "Title of the book" },
+        "author": { "type": "string", "description": "Author of the book" },
+        "coverImageUrl": { "type": "string", "description": "URL to the cover image" },
+        "rating": { "type": "number", "description": "User rating 1-5" },
+        "comment": { "type": "string", "description": "User's one-line review" },
+        "saveDate": { "type": "string", "description": "ISO date string" },
+        "userId": { "type": "string", "description": "UID of the owner" }
+      },
+      "required": ["title", "author", "rating", "userId"]
+    }
+  },
+  "firestore": {
+    "/books/{bookId}": {
+      "schema": "Book",
+      "description": "Collection of books stored by users"
+    }
+  }
+}
